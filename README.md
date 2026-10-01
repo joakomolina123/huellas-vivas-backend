@@ -44,4 +44,4 @@ Para poner a andar el proyecto, escribe en la consola:
 node servidor.js
 
 ### 5. Abre navegador y ejecuta
-http://localhost:3000/api-docs
+https://huellas-vivas-backend.onrender.com/api-docs
