@@ -1,6 +1,6 @@
 const db = require('../config/bd');
 
-// RF02 & RF03: Obtener catálogo con filtros
+
 const obtenerMascotas = async (req, res) => {
   try {
     const { ciudad, especie, tamano, sexo, esterilizado, estado } = req.query;
@@ -36,7 +36,8 @@ const obtenerMascotas = async (req, res) => {
       queryParams.push(esterilizado);
     }
 
-    query += " ORDER BY fecha_ingreso DESC";
+    
+    query += " ORDER BY id_mascota DESC";
 
     const [rows] = await db.query(query, queryParams);
     res.json(rows);
@@ -46,7 +47,7 @@ const obtenerMascotas = async (req, res) => {
   }
 };
 
-// RF05: Crear una nueva mascota
+
 const crearMascota = async (req, res) => {
   try {
     const { nombre, especie, raza, sexo, edad_aprox, tamano, ciudad, esterilizado, foto_url, descripcion } = req.body;
