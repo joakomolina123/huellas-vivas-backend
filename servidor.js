@@ -12,7 +12,6 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-
 const swaggerOptions = {
   definition: {
     openapi: '3.0.0',
@@ -21,7 +20,12 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'Sistema de gestión de refugio de mascotas, adoptantes y solicitudes de adopción',
     },
+    // Se agregan ambos servidores: Producción (Render) y Local
     servers: [
+      {
+        url: 'https://huellas-vivas-backend.onrender.com',
+        description: 'Servidor Producción (Render)',
+      },
       {
         url: `http://localhost:${PORT}`,
         description: 'Servidor Local',
